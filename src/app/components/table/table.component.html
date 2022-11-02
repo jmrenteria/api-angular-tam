@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Código
+      </th>
+      <th>
+        Nombre
+      </th>
+      <th>
+        {{column}}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of table">
+      <td>{{item.code}}</td>
+      <td>{{item.name}}</td>
+      <td *ngIf="item.age">{{item.age}}</td>
+      <td *ngIf="!item.age"><ion-button>Estudiantes</ion-button></td>
+    </tr>
+  </tbody>
+</table>
