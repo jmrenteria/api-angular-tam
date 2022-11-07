@@ -21,46 +21,45 @@
     </ion-item>
     <br>
 
-    <div class="table">
-    <table>
+    <!--Tabla que contiene los estudiantes-->
+    <ion-grid [fixed]="true">
 
-      <thead>
-        <tr>
-          <th>Codigo</th>
-          <th>Nombre</th>
-          <th>Edad</th>
-        </tr>
-      </thead>
+      <ion-row class="header">
+        <ion-col>Codigo</ion-col>
+        <ion-col>Nombre</ion-col>
+        <ion-col>Edad</ion-col>
+      </ion-row>
+  
+      <!--Aqui se le ponen las condiciones del backend-->
+      <ion-row ngFor>
+        <ion-col>55219003</ion-col>
+        <ion-col>Jose Renteria</ion-col>
+        <ion-col>21</ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>55321504</ion-col>
+        <ion-col>Manuel andrade</ion-col>
+        <ion-col> 18</ion-col>
+      </ion-row>
+  
+    </ion-grid>
 
-      <tbody>
-        <tr>
-          <!--Ejemplo de como quedaria-->
-          <td>553119</td>
-          <td>Pedro</td>
-          <td>21</td>
-        </tr>
+    <!--Footer con los datos de estudiantes totales-->
+    <ion-grid [fixed]="true">
 
-        <tr>
-          <td>556</td>
-          <td>Mte</td>
-          <td>21</td>
-        </tr>
-      </tbody><br>
-
-      <tfoot>
-        <tr>
-          <th>Total</th>
-          <th>Mayor de edad</th>
-          <th>Menor de edad</th>
-        </tr>
-        
-        <tr>
-          <td>20</td>
-          <td>5</td>
-          <td>15</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
+      <ion-row class="header">
+        <ion-col>Estudiantes totales</ion-col>
+        <ion-col>Estudiantes mayores de edad</ion-col>
+        <ion-col>Estudiantes menores de edad</ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>20</ion-col>
+        <ion-col>5</ion-col>
+        <ion-col>15</ion-col>
+      </ion-row>
+  
+    </ion-grid>
 
 </ion-content>

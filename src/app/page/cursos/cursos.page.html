@@ -20,43 +20,39 @@
         <ion-searchbar></ion-searchbar>
     </ion-item>
 
-    <!--Contenido de los cursos-->
-    <br>
-    <div class="table">
-    <table>
+    <!--Tabla que contiene los cursos-->
 
-      <thead>
-        <tr>
-          <th>Codigo</th>
-          <th>Nombre</th>
-          <th>Estudiantes</th>
-        </tr>
-      </thead>
+  <ion-grid [fixed]="true">
 
-      <tbody>
-        <tr>
-          <!--Ejemplo de como quedaria-->
-          <td>555</td>
-          <td>Sistemas</td>
-          <td> 
-            <ion-button size="small">
-              <ion-icon name="logo-github" class="mx-2"></ion-icon>
-            </ion-button>
-          </td>
-        </tr>
+    <ion-row class="header">
+      <ion-col>Codigo</ion-col>
+      <ion-col>Nombre</ion-col>
+      <ion-col>Ingresar</ion-col>
+    </ion-row>
 
-        <tr>
-          <td>556</td>
-          <td>Mte</td>
-          <td> 
-            <ion-button size="small">
-              <ion-icon name="logo-github" class="mx-2"></ion-icon>
-            </ion-button>
-          </td>
-        </tr>
-      </tbody><br>
+    <ion-row>
+      <ion-col>552</ion-col>
+      <ion-col>Sistemas</ion-col>
+      <ion-col>
+        <ion-button>
+          <ion-icon name="logo-github"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
-    </table>
-  </div>
+    <ion-row>
+      <ion-col>553</ion-col>
+      <ion-col>Mecatronica</ion-col>
+      <ion-col>
+        <ion-button>
+          <ion-icon name="logo-github"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+   
+
 
 </ion-content>
