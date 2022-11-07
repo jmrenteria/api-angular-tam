@@ -8,9 +8,23 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./page/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'cursos',
+    loadChildren: () => import('./page/cursos/cursos.module').then( m => m.CursosPageModule)
+  },  {
+    path: 'estudiantes',
+    loadChildren: () => import('./page/estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
+  },
+
+
+
 ];
 
 @NgModule({

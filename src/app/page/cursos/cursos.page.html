@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>API Angular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <!-- Titulo-->
+    <ion-item>
+      <h1> Cursos </h1>
+    </ion-item>
+
+    <!--Barra de busqueda-->
+    <ion-item>
+        <ion-searchbar></ion-searchbar>
+    </ion-item>
+
+    <!--Contenido de los cursos-->
+    <br>
+    <div class="table">
+    <table>
+
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Estudiantes</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <!--Ejemplo de como quedaria-->
+          <td>555</td>
+          <td>Sistemas</td>
+          <td> 
+            <ion-button size="small">
+              <ion-icon name="logo-github" class="mx-2"></ion-icon>
+            </ion-button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>556</td>
+          <td>Mte</td>
+          <td> 
+            <ion-button size="small">
+              <ion-icon name="logo-github" class="mx-2"></ion-icon>
+            </ion-button>
+          </td>
+        </tr>
+      </tbody><br>
+
+    </table>
+  </div>
+
+</ion-content>

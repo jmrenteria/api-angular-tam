@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>API Angular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <!-- Titulo-->
+    <ion-item>
+      <h1> Estudiantes </h1>
+    </ion-item>
+
+    <!--Barra de busqueda-->
+    <ion-item>
+        <ion-searchbar></ion-searchbar>
+    </ion-item>
+    <br>
+
+    <div class="table">
+    <table>
+
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <!--Ejemplo de como quedaria-->
+          <td>553119</td>
+          <td>Pedro</td>
+          <td>21</td>
+        </tr>
+
+        <tr>
+          <td>556</td>
+          <td>Mte</td>
+          <td>21</td>
+        </tr>
+      </tbody><br>
+
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <th>Mayor de edad</th>
+          <th>Menor de edad</th>
+        </tr>
+        
+        <tr>
+          <td>20</td>
+          <td>5</td>
+          <td>15</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</ion-content>

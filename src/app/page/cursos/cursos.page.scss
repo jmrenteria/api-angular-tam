@@ -1,0 +1,35 @@
+ion-toolbar{
+    --background: pink;
+}
+
+div.center{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+div.table{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+ion-button{
+    width: 100px;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+thead{
+    background-color: coral;
+    padding: 20px;
+}
+
+tbody{
+    background-color: gray;
+    padding: 20px;
+}
