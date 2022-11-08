@@ -1,24 +1,34 @@
-<table>
-  <thead>
-    <tr>
-      <th>
-        Código
-      </th>
-      <th>
-        Nombre
-      </th>
-      <th>
-        {{column}}
-      </th>
-    </tr>
-  </thead>
+ <ion-grid [fixed]="true">
+  <ion-row class="header">
+    <ion-col>Codigo</ion-col>
+    <ion-col>Nombre</ion-col>
+    <ion-col>{{column}}</ion-col>
+  </ion-row>
 
-  <tbody>
-    <tr *ngFor="let item of table">
-      <td>{{item.code}}</td>
-      <td>{{item.name}}</td>
-      <td *ngIf="item.age">{{item.age}}</td>
-      <td *ngIf="!item.age"><ion-button>Estudiantes</ion-button></td>
-    </tr>
-  </tbody>
-</table>
+  <ion-row *ngFor="let item of table">
+    <ion-col>{{item.code}}</ion-col>
+    <ion-col>{{item.name}}</ion-col>
+    <ion-col *ngIf="item.age">
+      {{item.age}}
+    </ion-col>
+    <ion-col *ngIf="!item.age">
+      <ion-button><ion-icon name="logo-github"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid [fixed]="true" *ngIf="column == 'Edad'">
+
+  <ion-row class="header">
+    <ion-col>Estudiantes totales</ion-col>
+    <ion-col>Estudiantes mayores de edad</ion-col>
+    <ion-col>Estudiantes menores de edad</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>{{table.length}}</ion-col>
+    <ion-col>{{countOld}}</ion-col>
+    <ion-col>{{countYng}}</ion-col>
+  </ion-row>
+
+</ion-grid>

@@ -8,51 +8,18 @@
 </ion-header>
 
 <ion-content>
-
   <br>
   <!-- Titulo-->
-    <ion-item>
-      <h1> Cursos </h1>
-    </ion-item>
+  <ion-item>
+    <h1>Cursos</h1>
+  </ion-item>
 
-    <!--Barra de busqueda-->
-    <ion-item>
-        <ion-searchbar></ion-searchbar>
-    </ion-item>
+  <!--Barra de busqueda-->
+  <ion-item>
+    <ion-searchbar></ion-searchbar>
+  </ion-item>
+  <br>
 
-    <!--Tabla que contiene los cursos-->
-
-  <ion-grid [fixed]="true">
-
-    <ion-row class="header">
-      <ion-col>Codigo</ion-col>
-      <ion-col>Nombre</ion-col>
-      <ion-col>Ingresar</ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>552</ion-col>
-      <ion-col>Sistemas</ion-col>
-      <ion-col>
-        <ion-button>
-          <ion-icon name="logo-github"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>553</ion-col>
-      <ion-col>Mecatronica</ion-col>
-      <ion-col>
-        <ion-button>
-          <ion-icon name="logo-github"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
-
-   
-
-
+  <!--Tabla que contiene los cursos-->
+  <app-table></app-table>
 </ion-content>

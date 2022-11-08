@@ -1,8 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-title >API Angular</ion-title>
-    <!--progress bar representa que esta cargando, no es necesaria pero si se puede implementar-->
-    <ion-progress-bar type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
@@ -14,13 +12,13 @@
     
       <!--Ionic tiene iconos por defecto en la pagina, name representa el icono-->
       <!--Boton que dirige a la pagina de cursos-->
-      <ion-button type="submit" shape="round" size="default">
+      <ion-button [routerLink]="['/cursos']" type="submit" shape="round" size="default">
           <ion-icon name="book" class="mx-2">  </ion-icon> 
           Cursos
       </ion-button><br><br>
 
       <!-- Boton que dirige a la pagina de estudiantes-->
-      <ion-button type="submit" shape="round" size="default">
+      <ion-button [routerLink]="['/estudiantes']" type="submit" shape="round" size="default">
         <ion-icon name="person" class="mx-2"></ion-icon>
         Estudiantes
       </ion-button>

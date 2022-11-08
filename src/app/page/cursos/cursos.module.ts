@@ -8,6 +8,8 @@ import { CursosPageRoutingModule } from './cursos-routing.module';
 
 import { CursosPage } from './cursos.page';
 
+import { TableComponent } from 'src/app/components/table/table.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { CursosPage } from './cursos.page';
     IonicModule,
     CursosPageRoutingModule
   ],
-  declarations: [CursosPage]
+  declarations: [CursosPage, TableComponent]
 })
 export class CursosPageModule {}

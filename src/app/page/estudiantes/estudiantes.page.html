@@ -11,55 +11,17 @@
 
   <br>
   <!-- Titulo-->
-    <ion-item>
-      <h1> Estudiantes </h1>
-    </ion-item>
+  <ion-item>
+    <h1> Estudiantes </h1>
+  </ion-item>
 
-    <!--Barra de busqueda-->
-    <ion-item>
-        <ion-searchbar></ion-searchbar>
-    </ion-item>
-    <br>
+  <!--Barra de busqueda-->
+  <ion-item>
+      <ion-searchbar></ion-searchbar>
+  </ion-item>
+  <br>
 
-    <!--Tabla que contiene los estudiantes-->
-    <ion-grid [fixed]="true">
-
-      <ion-row class="header">
-        <ion-col>Codigo</ion-col>
-        <ion-col>Nombre</ion-col>
-        <ion-col>Edad</ion-col>
-      </ion-row>
-  
-      <!--Aqui se le ponen las condiciones del backend-->
-      <ion-row ngFor>
-        <ion-col>55219003</ion-col>
-        <ion-col>Jose Renteria</ion-col>
-        <ion-col>21</ion-col>
-      </ion-row>
-  
-      <ion-row>
-        <ion-col>55321504</ion-col>
-        <ion-col>Manuel andrade</ion-col>
-        <ion-col> 18</ion-col>
-      </ion-row>
-  
-    </ion-grid>
-
-    <!--Footer con los datos de estudiantes totales-->
-    <ion-grid [fixed]="true">
-
-      <ion-row class="header">
-        <ion-col>Estudiantes totales</ion-col>
-        <ion-col>Estudiantes mayores de edad</ion-col>
-        <ion-col>Estudiantes menores de edad</ion-col>
-      </ion-row>
-  
-      <ion-row>
-        <ion-col>20</ion-col>
-        <ion-col>5</ion-col>
-        <ion-col>15</ion-col>
-      </ion-row>
-  
-    </ion-grid>
+  <!--Tabla que contiene los estudiantes-->
+  <app-table></app-table>
 
 </ion-content>
