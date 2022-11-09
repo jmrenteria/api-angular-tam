@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 interface IColumnType {
-  code: string;
   name: string;
   age?: number;
 }
@@ -17,19 +16,8 @@ export class TableComponent implements OnInit {
   column: string = "Placeholder";
   table: IColumnType[] = [
     {
-      code: "0",
       name: "Placeholder",
       age: 1
-    },
-    {
-      code: "1",
-      name: "Placeholder",
-      age: 7
-    },
-    {
-      code: "3",
-      name: "Placeholder",
-      age: 19
     }
   ];
 
@@ -43,10 +31,21 @@ export class TableComponent implements OnInit {
     }
   }
 
+  validateType() {
+    for (let item of this.table) {
+      if (item.age) {
+        this.column = "Edad";
+      } else {
+        this.column = "Estudiantes";
+      }
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {
     this.countAge();
+    this.validateType();
   }
 
 }
