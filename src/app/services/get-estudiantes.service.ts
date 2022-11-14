@@ -7,16 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class GetEstudiantesService {
 
-  
   constructor(private client: HttpClient) { }
 
-  list(): Observable<IDataResponseList> {
-    return this.client.get<IDataResponseList>(
-      'http://localhost:3001/api/v1/getEstudiantes'
+  list(): Observable<IDataEstudiantesList> {
+    return this.client.get<IDataEstudiantesList>(
+      'http://localhost:3001/api/v1/getPersonas'
     );
   };
 }
 
-interface IDataResponseList {
-  data: any;
+export interface IDataEstudiantesList {
+  data: any
 }

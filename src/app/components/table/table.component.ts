@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { GetCursosService, IDataCursosList} from 'src/app/services/get-cursos.service';
+import { GetEstudiantesService, IDataEstudiantesList } from 'src/app/services/get-estudiantes.service';
+import { Router } from '@angular/router';
 
 interface IColumnType {
-  name: string;
-  age?: number;
+  nombre: string;
+  edad?: number;
 }
 
 @Component({
@@ -11,19 +14,19 @@ interface IColumnType {
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
+  listEstudiantes: {
+    nombre: string,
+    edad: number
+  }[] = [];
+  listCursos: string[] = [];
   countOld: number = 0;
   countYng: number = 0;
   column: string = "Placeholder";
-  table: IColumnType[] = [
-    {
-      name: "Placeholder",
-      age: 1
-    }
-  ];
+  table: IColumnType[] = [];
 
   countAge() {
     for (let item of this.table) {
-      if (item.age > 17) {
+      if (item.edad > 17) {
         this.countOld++;
       } else {
         this.countYng++;
@@ -33,7 +36,7 @@ export class TableComponent implements OnInit {
 
   validateType() {
     for (let item of this.table) {
-      if (item.age) {
+      if (item.edad) {
         this.column = "Edad";
       } else {
         this.column = "Estudiantes";
@@ -41,11 +44,69 @@ export class TableComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
-  ngOnInit() {
-    this.countAge();
-    this.validateType();
+  loadData() {
+    this.servicesHttpEst.list().subscribe(
+      response => {
+        console.log(response.data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
+  getCursos() {
+    this.servicesHttpCur.list().subscribe(
+      response => {
+        for (let i = 0; i < response.data.length; i++) {
+          this.listCursos.push(response.data[i].nombre)
+        }
+        for (const curso of this.listCursos) {
+          this.table.push({
+            nombre: curso
+          })
+        }
+        this.validateType()
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getEstudiantes() {
+    this.servicesHttpEst.list().subscribe(
+      response => {
+        for (let i = 0; i < response.data.length; i++) {
+          this.listEstudiantes.push({
+            nombre: response.data[i].nombre,
+            edad: response.data[i].edad
+          })
+        }
+        for (const estudiante of this.listEstudiantes) {
+          this.table.push({
+            nombre: estudiante.nombre,
+            edad: estudiante.edad
+          })
+        }
+        this.validateType();
+        this.countAge();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  constructor(private servicesHttpCur: GetCursosService, private servicesHttpEst: GetEstudiantesService, private router: Router) { }
+
+  ngOnInit() {
+    if (this.router.url === "/cursos") {
+      this.getCursos();
+    }
+
+    if (this.router.url === "/estudiantes") {
+      this.getEstudiantes();
+    }
+  }
 }
