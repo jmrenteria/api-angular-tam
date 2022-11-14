@@ -1,0 +1,29 @@
+ion-toolbar{
+    --background: rgb(110, 22, 37);
+}
+
+ion-grid{
+    align-items: center;
+    text-align: center;
+}
+
+ion-button{
+  width: 100px;
+  --background: rgb(110, 22, 37);
+}
+
+ion-row.header ion-col {
+  font-weight: bold;
+  background-color: #727070;
+  border: solid 1px rgb(24, 24, 24);
+  color: #fff;
+}
+
+ion-row ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #363636;
+  border: solid 1px rgb(24, 24, 24);
+  color: #fff;
+}

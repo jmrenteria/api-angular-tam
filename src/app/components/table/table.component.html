@@ -1,0 +1,37 @@
+<ion-item>
+  <ion-searchbar (ionChange)="onChange($event)"></ion-searchbar>
+</ion-item>
+<br>
+ 
+ <ion-grid [fixed]="true">
+  <ion-row class="header">
+    <ion-col>Nombre</ion-col>
+    <ion-col>{{column}}</ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let item of table">
+    <ion-col>{{item.nombre}}</ion-col>
+    <ion-col *ngIf="item.edad">
+      {{item.edad}}
+    </ion-col>
+    <ion-col *ngIf="!item.edad">
+      <ion-button [routerLink]="['/estudiantes', encode(item.nombre)]"><ion-icon slot="start" name="list"></ion-icon>Ver</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid [fixed]="true" *ngIf="column == 'Edad'">
+
+  <ion-row class="header">
+    <ion-col>Estudiantes totales</ion-col>
+    <ion-col>Estudiantes mayores de edad</ion-col>
+    <ion-col>Estudiantes menores de edad</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>{{table.length}}</ion-col>
+    <ion-col>{{countOld}}</ion-col>
+    <ion-col>{{countYng}}</ion-col>
+  </ion-row>
+
+</ion-grid>
