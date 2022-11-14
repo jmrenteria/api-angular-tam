@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EstudiantesPage } from './page/estudiantes/estudiantes.page';
 
 const routes: Routes = [
   {
@@ -18,13 +19,15 @@ const routes: Routes = [
   {
     path: 'cursos',
     loadChildren: () => import('./page/cursos/cursos.module').then( m => m.CursosPageModule)
-  },  {
+  },
+  {
     path: 'estudiantes',
     loadChildren: () => import('./page/estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
   },
-
-
-
+  {
+    path: 'estudiantes/:nombre',
+    loadChildren: () => import('./page/estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
+  }
 ];
 
 @NgModule({

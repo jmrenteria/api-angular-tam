@@ -1,5 +1,5 @@
 <ion-item>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionChange)="onChange($event)"></ion-searchbar>
 </ion-item>
 <br>
  
@@ -15,7 +15,7 @@
       {{item.edad}}
     </ion-col>
     <ion-col *ngIf="!item.edad">
-      <ion-button><ion-icon name="logo-github"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/estudiantes', encode(item.nombre)]"><ion-icon slot="start" name="list"></ion-icon>Ver</ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>
